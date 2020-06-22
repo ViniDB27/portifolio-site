@@ -14,11 +14,16 @@ var clsInstagram = document.querySelector('.instagram')
 var facebook = document.getElementById('facebook')
 var clsFacebook = document.querySelector('.facebook')
 
+var freelancer = document.getElementById('freelancer')
+var clsFreelancer = document.querySelector('.freelancer')
+
 var whatsapp = document.getElementById('whatsapp')
 var clsWhatsapp = document.querySelector('.whatsapp')
 
+var menus = document.querySelectorAll('.navbar .nav-link[href^="#"]')
 
 minhaIdade.innerHTML = anoAtual - 1997
+
 
 clsGithub.addEventListener('mouseover', e=>{
     setTimeout(()=>{
@@ -69,6 +74,18 @@ clsFacebook.addEventListener('mouseout', e=>{
     },200)
 })
 
+clsFreelancer.addEventListener('mouseover', e=>{
+    setTimeout(()=>{
+        freelancer.src = 'assets/img/icons-redes-sociais/freelancer-black.png'
+    },200)
+})
+
+clsFreelancer.addEventListener('mouseout', e=>{
+    setTimeout(()=>{
+        freelancer.src = 'assets/img/icons-redes-sociais/freelancer-white.png'
+    },200)
+})
+
 clsWhatsapp.addEventListener('mouseover', e=>{
     setTimeout(()=>{
         whatsapp.src = 'assets/img/icons-redes-sociais/whatsapp-black.png'
@@ -80,3 +97,22 @@ clsWhatsapp.addEventListener('mouseout', e=>{
         whatsapp.src = 'assets/img/icons-redes-sociais/whatsapp-white.png'
     },200)
 })
+
+
+function SuaveScroll(event){
+
+    event.preventDefault()
+    const element = event.target
+    const id = element.getAttribute('href')
+    const section = document.querySelector(id)
+    window.scroll({
+        top:(id !== "#minhas-techs")? section.offsetTop :section.offsetTop - 80,
+        behavior: "smooth"
+    })
+
+}
+
+menus.forEach(item=>{
+    item.addEventListener('click', SuaveScroll)
+})
+
