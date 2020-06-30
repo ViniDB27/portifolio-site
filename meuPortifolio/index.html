@@ -120,7 +120,7 @@
                     <h3 class="h4">Minhas techs</h3>
                 </div>
                 <div class="col-10 offset-1">  
-                    <div class="owl-carousel owl-theme">
+                    <div class="owl-carousel owl-theme owl-minhas-tech">
                         <div class="item ">
                             <div class="techs">
                                 <img src="assets/img/icons/html5.png" class="img-fluid tech" alt="html5">
@@ -262,6 +262,7 @@
                     </div> 
                 </div>
             </div>
+            
         </section>
         <section id="o-que-faco-title" class="container-fluid">
             <div class="row oq-title">
@@ -295,7 +296,7 @@
                     </div>
                 </div>
         </section>
-        <section class="aux-mobile" class="container-fluid"></section>
+        <section class="aux-mobile container-fluid"></section>
         <section id="contato">
             <div class="pelicula-contato" >
                 <div class="container">
@@ -415,13 +416,15 @@
         }
 
         $(document).ready(function(){
-            $('.owl-carousel').owlCarousel({
+            $('.owl-minhas-tech').owlCarousel({
                 items:quantidadeItem,
                 loop:true,
                 autoplay:true,
                 autoplayTimeout:2000
             })
         })
+
+
     </script>
 </body>
 </html>
